@@ -18,14 +18,14 @@
     "bindings": [
       {
         "name": "QQ_RELAY",
-        "class_name": "QqRelay"
+        "class_name": "QqQrChannel"
       }
     ]
   },
   "migrations": [
     {
       "tag": "v1",
-      "new_sqlite_classes": [
+      "QqQrChannel": [
         "QqRelay"
       ]
     }
