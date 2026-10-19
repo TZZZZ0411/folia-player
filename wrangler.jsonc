@@ -1,19 +1,33 @@
 {
-  "$schema": "./node_modules/wrangler/config-schema.json",
-  "name": "folia-major",
+  "name": "folia",
   "main": "./worker/index.ts",
   "compatibility_date": "2026-04-02",
-  "define": {
-    "process.env.NODE_ENV": "\"production\"",
-    "process.env.JEST_WORKER_ID": "undefined",
-    "process.env.LOG_LEVEL": "undefined"
-  },
+  "compatibility_flags": [
+    "assets_navigation_prefers_asset_serving",
+    "nodejs_compat"
+  ],
   "assets": {
     "directory": "./dist",
-    "binding": "ASSETS",
     "not_found_handling": "single-page-application",
     "run_worker_first": [
       "/api/*"
     ]
+  },
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "QQ_RELAY",
+        "class_name": "QqRelay"
+      }
+    ]
+  },
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_sqlite_classes": ["QqRelay"]
+    }
+  ],
+  "vars": {
+    "QQ_SESSION_SECRET": "4tdrgfhtyjbzsdgyjhbdffyujgbgj"
   }
 }
