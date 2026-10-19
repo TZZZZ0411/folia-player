@@ -1,4 +1,5 @@
 {
+  "$schema": "https://raw.githubusercontent.com/cloudflare/workers-sdk/main/packages/wrangler/config-schema.json",
   "name": "folia",
   "main": "./worker/index.ts",
   "compatibility_date": "2026-04-02",
@@ -24,7 +25,9 @@
   "migrations": [
     {
       "tag": "v1",
-      "new_sqlite_classes": ["QqRelay"]
+      "new_sqlite_classes": [
+        "QqRelay"
+      ]
     }
   ],
   "vars": {
