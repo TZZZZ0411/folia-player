@@ -14,6 +14,15 @@
       "/api/*"
     ]
   },
+  "routes": [
+    {
+      "pattern": "folia.tidlock.online",
+      "zone_name": "tidlock.online",
+      "custom_domain": true,
+      "enabled": true,
+      "previews_enabled": false
+    }
+  ],
   "durable_objects": {
     "bindings": [
       {
@@ -25,12 +34,9 @@
   "migrations": [
     {
       "tag": "v1",
-      "QqQrChannel": [
-        "QqRelay"
+      "new_sqlite_classes": [
+        "QqQrChannel"
       ]
     }
-  ],
-  "vars": {
-    "QQ_SESSION_SECRET": "4tdrgfhtyjbzsdgyjhbdffyujgbgj"
-  }
+  ]
 }
